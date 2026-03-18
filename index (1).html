@@ -1,16 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POO con Canvas</title>
+  <meta charset="UTF-8">
+  <title>Canvas Interactivo</title>
+
+  <!-- ✅ FAVICON -->
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark glass px-4">
+  <span class="navbar-brand">Canvas Glass App</span>
+</nav>
+
+<div class="container mt-4">
+
+  <div class="row g-3 glass p-4">
+
+    <!-- Cantidad -->
+    <div class="col-md-3">
+      <input type="number" id="numCircles" class="form-control" placeholder="Cantidad">
+    </div>
+
+    <!-- Efecto -->
+    <div class="col-md-3">
+      <select id="tipoEfecto" class="form-select">
+        <option value="top-left">Esquina sup. izquierda</option>
+        <option value="top-right">Esquina sup. derecha</option>
+        <option value="bottom-left">Esquina inf. izquierda</option>
+        <option value="bottom-right">Esquina inf. derecha</option>
+        <option value="top">Desde arriba</option>
+        <option value="bottom">Desde abajo</option>
+      </select>
+    </div>
+
+    <!-- Botón generar -->
+    <div class="col-md-2">
+      <button class="btn btn-primary w-100" onclick="generarCirculos()">Generar</button>
+    </div>
+
+    <!-- Tamaño -->
+    <div class="col-md-2">
+      <input type="number" id="canvasWidth" class="form-control" placeholder="Ancho">
+    </div>
+
+    <div class="col-md-2">
+      <input type="number" id="canvasHeight" class="form-control" placeholder="Alto">
+    </div>
+
+    <div class="col-md-12">
+      <button class="btn btn-success w-100" onclick="cambiarCanvas()">Aplicar tamaño</button>
+    </div>
+
+  </div>
+
+  <!-- Canvas -->
+  <div class="text-center mt-4">
     <canvas id="canvas"></canvas>
+  </div>
 
-    <script src="/assets/js/main.js"></script>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center mt-5 p-3 glass">
+  <p class="mb-0">Desarrollado por: Jolette Ochoa 👨‍💻 | 2026</p>
+</footer>
+
+<!-- JS -->
+<script src="assets/js/main.js"></script>
+
+<script>
+let iconIndex = 1;
+
+setInterval(() => {
+  const favicon = document.querySelector("link[rel='icon']");
+  favicon.href = `assets/img/burbuja${iconIndex}.png`;
+
+  iconIndex++;
+  if (iconIndex > 3) iconIndex = 1;
+}, 500);
+</script>
+
 </body>
-
 </html>
