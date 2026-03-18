@@ -131,7 +131,7 @@ El usuario puede:
 
 ## 👨‍💻 Autor
 
-Proyecto desarrollado por: **[Tu Nombre]**
+Proyecto desarrollado por: **[JOLETTE OCHOA]**
 
 ---
 
